@@ -1,11 +1,12 @@
 import random as rnd
-from tools.filters.edgeFilter import EdgeFilter
-from tools.filters.hsvFilter import HsvFilter
-from tools.filters.GenomeClass import Genome
+from tools.images.filters.edgeFilter import EdgeFilter
+from tools.images.filters.hsvFilter import HsvFilter
+from tools.images.filters.GenomeClass import Genome
 from sklearn.model_selection import KFold
 import numpy as np
 from tensorflow import keras
 import gc
+
 
 class FilterGeneticAlgorithm:
     
