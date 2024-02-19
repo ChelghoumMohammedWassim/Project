@@ -151,23 +151,6 @@ class NumericalGeneticAlgorithm:
     
     def get_X_Y(self, data):
         return data[0:len(data)-1], data.pop(-1)
-    
-    
-    # def get_output(self, genome: Genome, data_set, label):
-    #     data=self.get_data_from_genome(genome.selection, genome.operation, data_set)
-
-    #     dataset = create_instances_from_matrices(np.array(data), np.array(label), name="generated from matrices")
-    #     dataset.class_is_last()  
-            
-    #     string_to_nominal_filter = Filter(classname="weka.filters.unsupervised.attribute.StringToNominal", options=["-R", "last"])
-    #     string_to_nominal_filter.inputformat(dataset)
-    #     dataset = string_to_nominal_filter.filter(dataset)
-    #     cls = Classifier(classname="weka.classifiers.trees.J48")
-    #     evaluation = Evaluation(dataset)
-    #     evaluation.crossvalidate_model(cls, dataset, 2, Random(self.rnd_seed))
-    #     print(evaluation.summary())
-        
-    #     return data_set
         
     def get_output(self, genome: Genome, data_set,label):
         data = self.get_selected_Columns(genome.selection, data_set) 
@@ -213,7 +196,6 @@ class NumericalGeneticAlgorithm:
                 reverse=True
             )
             
-            # print(f"Generation: {i} best solution acc: {population[0].fit}")
             
             next_generation = population[0:2]
             
