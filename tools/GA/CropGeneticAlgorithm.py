@@ -41,6 +41,9 @@ class CropGeneticAlgorithm:
     def fitness(self, filter): 
         X_train=self.get_newData(self.X_train,filter)
         evaluations=0
+
+        if X_train == None:
+            return 0
     
         kf = KFold(n_splits=10, random_state=42, shuffle=True)
         print("--------------------------------------------------------------------------------")
